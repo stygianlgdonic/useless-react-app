@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 
 import Button from "react-bootstrap/Button";
 import './sign.css'
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 // import "./Login.css";
 
 export default function Login() {
@@ -18,14 +18,18 @@ export default function Login() {
         return email.length > 0 && password.length > 0;
 
     }
-    const navigate= useNavigate()
+    const navigate = useNavigate()
     function handleSubmit(event) {
 
         event.preventDefault();
 
     }
-    const handleClick=()=>{
+    const handleClick = () => {
         navigate('/items')
+        window.eyelet.identify('UNIQUE_USER_ID', {
+            name: "John Doe",
+            email: "johndoe@example.com"
+        })
     }
     return (
         <div className="Login">
@@ -50,7 +54,7 @@ export default function Login() {
                 <input type="password" placeholder="Repeat Password" name="psw-repeat" required/>
 
                 <label>
-                    <input type="checkbox" checked="checked" name="remember" />
+                    <input type="checkbox" checked="checked" name="remember"/>
                     Remember me
                 </label>
 
@@ -59,7 +63,8 @@ export default function Login() {
 
                 <div className="clearfix">
                     <button type="button" className="cancelbtn">Cancel</button>
-                    <button onClick={handleClick} className="signupbtn">Sign Up</button>
+                    <button onClick={handleClick}
+                        className="signupbtn">Sign Up</button>
                 </div>
             </div>
         </div>
