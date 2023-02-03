@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import { Route, Routes } from "react-router-dom"
 import "./App.css"
+import Login from "./SignIn"
 
 class Items extends Component {
   render() {
@@ -23,16 +24,17 @@ class App extends Component {
     super(props);
     this.clicked = this.clicked.bind(this);
   }
-  clicked(path) {
-    window.location.assign(path)
+  clicked() {
+    window.eyelet.identify('UNIQUE_USER_ID', {
+      name: "John Doe",
+      email: "johndoe@example.com"
+    })
   }
   render() {
     return (
       <div>
-        <button onClick={() => this.clicked('/')}>home</button>
-        <button onClick={() => this.clicked('/items')}>items</button>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Login />} />
           <Route path="/items" element={<Items />} />
         </Routes>
       </div>
