@@ -1,22 +1,5 @@
 import React, { Component } from "react"
-import { Route, Routes } from "react-router-dom"
 import "./App.css"
-
-class Items extends Component {
-  render() {
-    return (
-      <div>Items</div>
-    )
-  }
-}
-
-class Home extends Component {
-  render() {
-    return (
-      <div>Home</div>
-    )
-  }
-}
 
 class App extends Component {
   constructor(props) {
@@ -29,12 +12,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.clicked('/')}>home</button>
-        <button onClick={() => this.clicked('/items')}>items</button>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/items" element={<Items />} />
-        </Routes>
+        <p>home</p>
+        <p>items</p>
       </div>
     )
   }
