@@ -18,6 +18,7 @@ class App extends Component {
       <div>
         <p>home</p>
         <p>items</p>
+        <Login></Login>
       </div>
     )
   }
