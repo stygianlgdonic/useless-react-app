@@ -1,6 +1,5 @@
 import React, { Component } from "react"
 import "./App.css"
-import Login from "./SignIn"
 
 class App extends Component {
   constructor(props) {
@@ -18,7 +17,6 @@ class App extends Component {
       <div>
         <p>home</p>
         <p>items</p>
-        <Login></Login>
       </div>
     )
   }
